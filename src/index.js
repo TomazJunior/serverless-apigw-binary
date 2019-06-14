@@ -47,10 +47,11 @@ class BinarySupport {
 
   afterDeploy() {
     const mimeTypes = this.serverless.service.custom.apigwBinary.types;
+    const apiGatewayName = this.serverless.service.custom.apiGatewayBinary.apiGatewayName || this.getApiGatewayName();
     const swaggerInput = JSON.stringify({
       "swagger": "2.0",
       "info": {
-        "title": this.getApiGatewayName()
+        "title": apiGatewayName
       },
       "x-amazon-apigateway-binary-media-types": mimeTypes
     });
