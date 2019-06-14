@@ -47,7 +47,7 @@ class BinarySupport {
 
   afterDeploy() {
     const mimeTypes = this.serverless.service.custom.apigwBinary.types;
-    const apiGatewayName = this.serverless.service.custom.apiGatewayBinary.apiGatewayName || this.getApiGatewayName();
+    const apiGatewayName = this.serverless.service.custom.apigwBinary.apiGatewayName || this.getApiGatewayName();
     const swaggerInput = JSON.stringify({
       "swagger": "2.0",
       "info": {
